@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25674229-91EC-44B4-A1F7-AE481ACE1348}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bejeweled_clone</RootNamespace>
+    <AssemblyName>Bejeweled clone</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Animation\AbstractAnimation.cs" />
+    <Compile Include="Animation\ClearingAnimation.cs" />
+    <Compile Include="Animation\IAnimation.cs" />
+    <Compile Include="Animation\GemMovementAnimation.cs" />
+    <Compile Include="Animation\StaticSprite.cs" />
+    <Compile Include="ClickableTextureTarget.cs" />
+    <Compile Include="ClickableTextureTargetWrapper.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Input\MouseUtils.cs" />
+    <Compile Include="Interfaces\ISimpleDraw.cs" />
+    <Compile Include="LimitedInt.cs" />
+    <Compile Include="Model\EmptyTile.cs" />
+    <Compile Include="Model\ITileVisitor.cs" />
+    <Compile Include="Model\IPlayBoard.cs" />
+    <Compile Include="Model\JewelGeneratingTile.cs" />
+    <Compile Include="Model\Jewels\ColourGroup.cs" />
+    <Compile Include="Model\Jewels\Jewel.cs" />
+    <Compile Include="Model\Jewels\JewelTypes.cs" />
+    <Compile Include="Model\Jewels\SpecialPowers\NoSpecialPower.cs" />
+    <Compile Include="Model\Jewels\SpecialPowers\SpecialPower.cs" />
+    <Compile Include="Model\NormalTile.cs" />
+    <Compile Include="Model\RandomJewelGenerator.cs" />
+    <Compile Include="Model\RandomJewelGenerators\SimpleJewelGenerator.cs" />
+    <Compile Include="Model\SimpleBoard.cs" />
+    <Compile Include="Model\ITile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\AbstractState.cs" />
+    <Compile Include="States\AnimationState.cs" />
+    <Compile Include="States\CalculateClearingState.cs" />
+    <Compile Include="States\DropCalculation.cs" />
+    <Compile Include="States\IState.cs" />
+    <Compile Include="States\StateManager.cs" />
+    <Compile Include="States\BoardUserInputState.cs" />
+    <Compile Include="States\SwappingAnimationState.cs" />
+    <Compile Include="States\SwappingState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\BlueGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\ClearingAnimation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GreenGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\OrangeGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PurpleGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\RedGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TilePlaceholder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\YellowGem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
