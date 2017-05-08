@@ -20,20 +20,14 @@ namespace Bejeweled_clone.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
         {
-            playBoard.Draw(gameTime);
-            graphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
-            wrapper.Draw(gameTime, spriteBatch);
-            spriteBatch.End();
         }
 
-        public override void Update(GameTime gameTime)
+        public override void OnPush(GameTime gameTime)
         {
             var collections = playBoard.ClearUpdate(gameTime);
             //do points
             HashSet<Point> allpoints = new HashSet<Point>();
-            foreach(var set in collections)
+            foreach (var set in collections)
             {
                 foreach (var i in set)
                 {
@@ -42,20 +36,24 @@ namespace Bejeweled_clone.States
                 }
             }
             List<IAnimation> animations = new List<IAnimation>();
-            foreach(var i in allpoints)
+            foreach (var i in allpoints)
             {
-                animations.Add(new ClearingAnimation(i*playBoard.TileSize, playBoard.TileSize, gameTime));
+                animations.Add(new ClearingAnimation(i * playBoard.TileSize, playBoard.TileSize, gameTime));
             }
             if (animations.Count == 0)
             {
-                stateManager.ChangeState(new BoardUserInputState(playBoard, stateManager, wrapper));
+                stateManager.ChangeState(new BoardUserInputState(playBoard, stateManager, wrapper, gameTime), gameTime);
             }
             else {
                 var alljewels = playBoard.GetAllJewels(ClearingAnimation.Duration, gameTime);
                 foreach (var i in alljewels)
                     animations.Add(i.Item2);
-                stateManager.ChangeState(new AnimationState(playBoard, stateManager, wrapper, animations, new DropCalculation(playBoard, stateManager, wrapper)));
+                stateManager.ChangeState(new AnimationState(playBoard, stateManager, wrapper, animations, new DropCalculation(playBoard, stateManager, wrapper)), gameTime);
             }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
         }
     }
 }

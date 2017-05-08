@@ -11,10 +11,10 @@ namespace Bejeweled_clone.States
     class StateManager
     {
         List<IState> CurrentStates = new List<IState>();
-        public IState ChangeState(IState newState)
+        public IState ChangeState(IState newState, GameTime gameTime)
         {
             var i = PopState();
-            PushState(newState);
+            PushState(newState, gameTime);
             return i;
         }
         public IState PopState()
@@ -28,9 +28,10 @@ namespace Bejeweled_clone.States
             return null;
         }
 
-        public void PushState(IState newState)
+        public void PushState(IState newState, GameTime gameTime)
         {
             CurrentStates.Add(newState);
+            newState.OnPush(gameTime);
         }
 
         public IState GetTopState()

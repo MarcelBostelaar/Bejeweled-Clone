@@ -11,7 +11,7 @@ namespace Bejeweled_clone.Animation
     class GemMovementAnimation : AbstractAnimation
     {
         public static long duration { get { return 2000000; } }
-        public GemMovementAnimation(Point startPosition, Point endPosition, Texture2D sprite, Point size, GameTime gametime) : base(startPosition, endPosition, sprite, size, gametime, duration)
+        public GemMovementAnimation(Point startPosition, Point endPosition, Texture2D sprite, Point size, GameTime gametime) : base(startPosition, endPosition, sprite, size, gametime, duration, 5)
         {
 
         }

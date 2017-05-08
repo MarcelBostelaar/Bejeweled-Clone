@@ -10,7 +10,7 @@ namespace Bejeweled_clone.Animation
 {
     class StaticSprite : AbstractAnimation
     {
-        public StaticSprite(Point coordinates, Texture2D sprite, Point size, GameTime gameTime, long duration) : base(coordinates, coordinates, sprite, size, gameTime, duration)
+        public StaticSprite(Point coordinates, Texture2D sprite, Point size, GameTime gameTime, long duration, int zIndex) : base(coordinates, coordinates, sprite, size, gameTime, duration, zIndex)
         {
 
         }

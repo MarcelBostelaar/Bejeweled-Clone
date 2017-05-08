@@ -20,26 +20,23 @@ namespace Bejeweled_clone.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
         {
-            playBoard.Draw(gameTime);
-            graphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
-            wrapper.Draw(gameTime, spriteBatch);
-            spriteBatch.End();
         }
 
-        public override void Update(GameTime gameTime)
+        public override void OnPush(GameTime gameTime)
         {
             List<IAnimation> list = new List<IAnimation>();
             if (!playBoard.DropCalculationUpdate(gameTime, list))
             {
-                stateManager.ChangeState(new CalculateClearingState(playBoard, stateManager, wrapper));
-                //stateManager.ChangeState(new BoardUserInputState(playBoard, stateManager, wrapper));
+                stateManager.ChangeState(new CalculateClearingState(playBoard, stateManager, wrapper), gameTime);
             }
             else
             {
-                stateManager.ChangeState(new AnimationState(playBoard, stateManager, wrapper, list, this));
+                stateManager.ChangeState(new AnimationState(playBoard, stateManager, wrapper, list, this), gameTime);
             }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
         }
     }
 }

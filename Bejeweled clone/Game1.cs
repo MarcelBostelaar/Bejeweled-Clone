@@ -67,7 +67,7 @@ namespace Bejeweled_clone
             wrapper.drawHeight = 700;
             wrapper.drawPosition = new Point(20);
             stateManager = new StateManager();
-            stateManager.PushState(new DropCalculation(board, stateManager, wrapper));
+            stateManager.PushState(new DropCalculation(board, stateManager, wrapper), new GameTime());
             // TODO: use this.Content to load your game content here
         }
 

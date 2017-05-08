@@ -18,6 +18,7 @@ namespace Bejeweled_clone.States
             this.wrapper = wrapper;
         }
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
+        public abstract void OnPush(GameTime gameTime);
         public abstract void Update(GameTime gameTime);
     }
 }

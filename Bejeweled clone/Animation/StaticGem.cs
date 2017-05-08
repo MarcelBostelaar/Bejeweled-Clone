@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Bejeweled_clone.Animation
 {
-    interface IAnimation : IComparable<IAnimation>
+    class StaticGem : StaticSprite
     {
-        bool Done(GameTime gameTime);
-        void Draw(GameTime gameTime, SpriteBatch spriteBatch);
-        long animationTimeSpanTicks { get; }
-        int zIndex { get; }
+        public StaticGem(Point coordinates, Texture2D sprite, Point size, GameTime gameTime, long duration) :base(coordinates, sprite, size, gameTime, duration, 5)
+        {
+
+        }
     }
 }

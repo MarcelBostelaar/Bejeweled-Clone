@@ -11,8 +11,10 @@ namespace Bejeweled_clone.Animation
     abstract class AbstractAnimation : IAnimation
     {
         public long animationTimeSpanTicks { get; protected set; }
-        public AbstractAnimation(Point StartingCoordinates, Point EndCoordinates, Texture2D sprite, Point size, GameTime gameTime, long animationTimeTicks)
+        public int zIndex { get; private set; }
+        public AbstractAnimation(Point StartingCoordinates, Point EndCoordinates, Texture2D sprite, Point size, GameTime gameTime, long animationTimeTicks, int zIndex)
         {
+            this.zIndex = zIndex;
             animationTimeSpanTicks = animationTimeTicks;
             start = StartingCoordinates;
             this.size = size;
@@ -49,5 +51,10 @@ namespace Bejeweled_clone.Animation
         }
 
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+
+        public int CompareTo(IAnimation other)
+        {
+            return zIndex - other.zIndex;
+        }
     }
 }

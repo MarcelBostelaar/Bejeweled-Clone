@@ -40,8 +40,12 @@ namespace Bejeweled_clone.States
                     newlist.Add(i);
             }
             if (newlist.Count == 0)
-                stateManager.ChangeState(nextState);
+                stateManager.ChangeState(nextState,gameTime);
             animations = newlist;
+        }
+
+        public override void OnPush(GameTime gameTime)
+        {
         }
     }
 }

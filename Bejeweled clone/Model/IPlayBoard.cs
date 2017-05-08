@@ -20,12 +20,13 @@ namespace Bejeweled_clone.Model
         /// <returns>Boolean indicating if it made a change or not.</returns>
         bool DropCalculationUpdate(GameTime gameTime, List<IAnimation> addAnimationsTo);
         void Draw(GameTime gameTime);
-        void Draw(GameTime gameTime, List<IAnimation> animations);
+        void Draw(GameTime gameTime, IEnumerable<IAnimation> animations);
         Point TileSize { get; }
         List<List<Point>> ClearUpdate(GameTime gameTime);
         ITile GetTile(Point coordinates);
         ClickableTextureTarget BoardTexture { get; }
         void DrawGems(GameTime gameTime);
-        List<Tuple<Point,StaticSprite>> GetAllJewels(long duration, GameTime gameTime);
+        List<Tuple<Point, IAnimation>> GetAllJewels(long duration, GameTime gameTime);
+        List<Tuple<Point, IAnimation>> GetAllTiles(long duration, GameTime gameTime);
     }
 }

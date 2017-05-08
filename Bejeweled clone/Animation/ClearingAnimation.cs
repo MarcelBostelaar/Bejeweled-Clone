@@ -13,7 +13,7 @@ namespace Bejeweled_clone.Animation
         public static Texture2D ClearingSprite;
         public static long Duration { get { return 20000000; } }
         
-        public ClearingAnimation(Point position, Point size, GameTime gameTime) : base(position, position, ClearingSprite, size, gameTime, Duration)
+        public ClearingAnimation(Point position, Point size, GameTime gameTime) : base(position, position, ClearingSprite, size, gameTime, Duration, 10)
         {
 
         }

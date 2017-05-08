@@ -12,5 +12,6 @@ namespace Bejeweled_clone.States
     {
         void Update(GameTime gameTime);
         void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
+        void OnPush(GameTime gameTime);
     }
 }

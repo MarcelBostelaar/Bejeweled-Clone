@@ -39,9 +39,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Animation\AbstractAnimation.cs" />
+    <Compile Include="Animation\AnimationContainer.cs" />
     <Compile Include="Animation\ClearingAnimation.cs" />
     <Compile Include="Animation\IAnimation.cs" />
     <Compile Include="Animation\GemMovementAnimation.cs" />
+    <Compile Include="Animation\StaticBoardTile.cs" />
+    <Compile Include="Animation\StaticGem.cs" />
     <Compile Include="Animation\StaticSprite.cs" />
     <Compile Include="ClickableTextureTarget.cs" />
     <Compile Include="ClickableTextureTargetWrapper.cs" />

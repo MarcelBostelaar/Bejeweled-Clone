@@ -84,15 +84,29 @@ namespace Bejeweled_clone.Model
             graphicsDevice.SetRenderTargets(originalRendertargets);
         }
 
-        public List<Tuple<Point, StaticSprite>> GetAllJewels(long ticks, GameTime gameTime)
+        public List<Tuple<Point, IAnimation>> GetAllTiles(long ticks, GameTime gameTime)
         {
-            List<Tuple<Point, StaticSprite>> sprites = new List<Tuple<Point, StaticSprite>>();
+            List<Tuple<Point, IAnimation>> sprites = new List<Tuple<Point, IAnimation>>();
+            for (int x = 0; x < board.GetLength(0); x++)
+            {
+                for (int y = 0; y < board.GetLength(1); y++)
+                {
+                    if (board[x, y].GetSprite() != null)
+                        sprites.Add(new Tuple<Point, IAnimation>(new Point(x, y), new StaticBoardTile(new Point(x, y) * TileSize, board[x, y].GetSprite(), TileSize, gameTime, ticks)));
+                }
+            }
+            return sprites;
+        }
+        
+        public List<Tuple<Point, IAnimation>> GetAllJewels(long ticks, GameTime gameTime)
+        {
+            List<Tuple<Point, IAnimation>> sprites = new List<Tuple<Point, IAnimation>>();
             for (int x = 0; x < board.GetLength(0); x++)
             {
                 for (int y = 0; y < board.GetLength(1); y++)
                 {
                     if (board[x, y].jewel != null)
-                        sprites.Add(new Tuple<Point, StaticSprite>(new Point(x, y),new StaticSprite(new Point(x, y) * TileSize, board[x, y].jewel.sprite, TileSize, gameTime, ticks)));
+                        sprites.Add(new Tuple<Point, IAnimation>(new Point(x, y),new StaticGem(new Point(x, y) * TileSize, board[x, y].jewel.sprite, TileSize, gameTime, ticks)));
                 }
             }
             return sprites;
@@ -174,13 +188,13 @@ namespace Bejeweled_clone.Model
             return board[coordinates.X, coordinates.Y];
         }
 
-        public void Draw(GameTime gameTime, List<IAnimation> animations)
+        public void Draw(GameTime gameTime, IEnumerable<IAnimation> animations)
         {
             var originalRendertargets = graphicsDevice.GetRenderTargets();
             graphicsDevice.SetRenderTarget(renderTexture.texture);
 
             spriteBatch.Begin();
-            DrawBoard(gameTime);
+            //DrawBoard(gameTime);
             foreach(var i in animations)
             {
                 i.Draw(gameTime, spriteBatch);
