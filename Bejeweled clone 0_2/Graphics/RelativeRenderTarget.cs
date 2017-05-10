@@ -14,7 +14,8 @@ namespace Bejeweled_clone_0_2.Graphics
         private RenderTarget2D renderTarget { get; set; }
         private int width { get; set; }
         private int height { get; set; }
-
+        private GraphicsDevice graphicsDevice { get; set; }
+        private LinkedList<Vector2> mouseClicks = new LinkedList<Vector2>();
 
         /// <summary>
         /// The position of this RelativeRenderTarget in its parent, with 0,0 representing topleft and 1,1 representing bottomright.
@@ -28,11 +29,26 @@ namespace Bejeweled_clone_0_2.Graphics
         /// A list of the child textures of this texture.
         /// </summary>
         public List<RelativeRenderTarget> childTextures { get; set; }
-
         /// <summary>
         /// List of all the IAnimations, except for the ChildRenderTargets.
         /// </summary>
-        public List<IAnimation> animations { get; set; }
+        public IEnumerable<IAnimation> animations { get; set; }
+        
+        /// <summary>
+        /// A relative render target is used to draw IAnimations using relative coordinates and relative sizes. The top left is 0,0 and the bottom right is 1,1.
+        /// </summary>
+        /// <param name="graphicsDevice">A graphics device instance.</param>
+        /// <param name="width">The width of this render target.</param>
+        /// <param name="height">The height of this render target.</param>
+        public RelativeRenderTarget(GraphicsDevice graphicsDevice, int width, int height)
+        {
+            renderTarget = new RenderTarget2D(graphicsDevice, width, height);
+            this.width = width;
+            this.height = height;
+            this.graphicsDevice = graphicsDevice;
+            childTextures = new List<RelativeRenderTarget>();
+            animations = new List<IAnimation>();
+        }
 
         /// <summary>
         /// Draws the children of this RelativeRenderTexture onto itself. Also draws any child RelativeRenderTexture using this method.
@@ -47,17 +63,58 @@ namespace Bejeweled_clone_0_2.Graphics
             var AllAnimations = new List<IAnimation>();
             AllAnimations.AddRange(childTextures);
             AllAnimations.AddRange(animations);
-            animations.Sort();
-            //add children and animations into one sorted list.
-            //draw the list.
-            throw new NotImplementedException();
+            AllAnimations.Sort();
+            
+            var oldTarget = graphicsDevice.GetRenderTargets();
+            graphicsDevice.SetRenderTarget(renderTarget);
+
+            spriteBatch.Begin();
+            foreach (var animation in AllAnimations)
+            {
+                animation.Draw(gameTime, spriteBatch, size);
+            }
+            spriteBatch.End();
+
+            graphicsDevice.SetRenderTargets(oldTarget);
         }
 
-        public RelativeRenderTarget(GraphicsDevice graphicsDevice, int width, int height)
+        /// <summary>
+        /// Returns the oldest click that is saved. Removes that click from the saved clicks.
+        /// </summary>
+        /// <returns>A click position, normalised to 0,0 as the top left and 1,1 as the bottom right.</returns>
+        public Vector2 GetEarliestClick()
         {
-            renderTarget = new RenderTarget2D(graphicsDevice, width, height);
-            this.width = width;
-            this.height = height;
+            if (mouseClicks.Count == 0)
+                throw new Exception("No click was found.");
+            var i = mouseClicks.First.Value;
+            mouseClicks.RemoveFirst();
+            return i;
+        }
+
+        /// <summary>
+        /// Indicates if there is a new click available.
+        /// </summary>
+        /// <returns>Boolean indicating the presence of a new click.</returns>
+        public bool HasClick()
+        {
+            if (mouseClicks.Count > 0)
+                return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Saves a mouseclick in the relative position of this RelativeRenderTarget, and saves it to all its children.
+        /// </summary>
+        /// <param name="position">The position normalised to 0,0 as the top left and 1,1 as the bottom right.</param>
+        public void AddClick(Vector2 position)
+        {
+            mouseClicks.AddLast(position);
+            foreach(var child in childTextures)
+            {
+                Vector2 newPosition = (position - child.position) / child.size;
+                if (newPosition.X >= 0 && newPosition.X < 1 && newPosition.Y >= 0 && newPosition.Y < 1)
+                    child.AddClick(newPosition);
+            }
         }
 
         /// <summary>
