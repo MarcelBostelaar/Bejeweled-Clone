@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bejeweled clone", "Bejeweled clone\Bejeweled clone.csproj", "{25674229-91EC-44B4-A1F7-AE481ACE1348}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bejeweled clone 0_2", "Bejeweled clone 0_2\Bejeweled clone 0_2.csproj", "{419ED913-98E3-44F7-9EF0-34D5B75FF29D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{25674229-91EC-44B4-A1F7-AE481ACE1348}.Debug|x86.Build.0 = Debug|x86
 		{25674229-91EC-44B4-A1F7-AE481ACE1348}.Release|x86.ActiveCfg = Release|x86
 		{25674229-91EC-44B4-A1F7-AE481ACE1348}.Release|x86.Build.0 = Release|x86
+		{419ED913-98E3-44F7-9EF0-34D5B75FF29D}.Debug|x86.ActiveCfg = Debug|x86
+		{419ED913-98E3-44F7-9EF0-34D5B75FF29D}.Debug|x86.Build.0 = Debug|x86
+		{419ED913-98E3-44F7-9EF0-34D5B75FF29D}.Release|x86.ActiveCfg = Release|x86
+		{419ED913-98E3-44F7-9EF0-34D5B75FF29D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

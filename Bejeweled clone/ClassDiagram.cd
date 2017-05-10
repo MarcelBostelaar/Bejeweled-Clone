@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bejeweled_clone.ClickableTextureTarget" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABABEAAAAAAggQgQAAAAIAAAAAAAgQAAAAAACABAAA=</HashCode>
+      <FileName>ClickableTextureTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.ClickableTextureTargetWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAgAAAAAAAAACQAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ClickableTextureTargetWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.LimitedInt" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAYAUAKAIAAAAAACIAAAAgAAAAAAA=</HashCode>
+      <FileName>LimitedInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.AbstractState">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAACAgAAAAAAAAAAAAAAIAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\AbstractState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bejeweled_clone.States.AnimationState" Collapsed="true">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkCAAAAAAAAAAAAAEAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\AnimationState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.BoardUserInputState" Collapsed="true">
+    <Position X="9" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkAAAAAAAAAAAAAAEAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\BoardUserInputState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.CalculateClearingState" Collapsed="true">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\CalculateClearingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.DropCalculation" Collapsed="true">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\DropCalculation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.SwappingAnimationState" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>States\SwappingAnimationState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.States.SwappingState" Collapsed="true">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkAAAgEAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\SwappingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Model.EmptyTile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAkAAEAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Model\EmptyTile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Model.JewelGeneratingTile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAAIAAkAAEAAAAAAAAAAAAAAAQAAAAAABAAAA=</HashCode>
+      <FileName>Model\JewelGeneratingTile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Model.NormalTile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAkAAEAAAAAAAAAAAAAAIYIAAAAABAAAA=</HashCode>
+      <FileName>Model\NormalTile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Model.SimpleBoard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GQAAAECAAAgJAgEAAAAAAEIAAAAgAAQCIACQAAACQAk=</HashCode>
+      <FileName>Model\SimpleBoard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Model.Jewels.Jewel" Collapsed="true">
+    <Position X="16" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAJQCAAAAAAAAQAAAAAAQAABpAAAAAQBQAAABACAA=</HashCode>
+      <FileName>Model\Jewels\Jewel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Model.Jewels.SpecialPowers.NoSpecialPower" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Model\Jewels\SpecialPowers\NoSpecialPower.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Model.RandomJewelGenerators.SimpleJewelGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Model\RandomJewelGenerators\SimpleJewelGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bejeweled_clone.Input.MouseUtils" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAEAAAAgAAABAIAAAAAAAAAAIAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Input\MouseUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.AbstractAnimation" Collapsed="true">
+    <Position X="14.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAIAAAAAAgQhAIAAAAAAABEAAAAAAAAAkEAAAAA=</HashCode>
+      <FileName>Animation\AbstractAnimation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.AnimationContainer" Collapsed="true">
+    <Position X="20.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAQAAAAAAQAAAAEAAAAAAAAAACQAA=</HashCode>
+      <FileName>Animation\AnimationContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.ClearingAnimation" Collapsed="true">
+    <Position X="17.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAgAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\ClearingAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.GemMovementAnimation" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\GemMovementAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.StaticBoardTile" Collapsed="true">
+    <Position X="15.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\StaticBoardTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.StaticGem" Collapsed="true">
+    <Position X="13.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\StaticGem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bejeweled_clone.Animation.StaticSprite" Collapsed="true">
+    <Position X="14.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation\StaticSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Bejeweled_clone.Model.IPlayBoard" Collapsed="true">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAACAAAgJAgEAAAAAAAAAAAAAAAACAAAQAAAAQAg=</HashCode>
+      <FileName>Model\IPlayBoard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Model.ITile" Collapsed="true">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAkAAEAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Model\ITile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Model.ITileVisitor" Collapsed="true">
+    <Position X="17.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ITileVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Model.RandomJewelGenerator" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Model\RandomJewelGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Model.Jewels.SpecialPowers.SpecialPower" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Model\Jewels\SpecialPowers\SpecialPower.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Interfaces.ISimpleDraw" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\ISimpleDraw.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.Animation.IAnimation" Collapsed="true">
+    <Position X="20.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Animation\IAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bejeweled_clone.States.IState" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>States\IState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Bejeweled_clone.Model.Jewels.ColourGroup" Collapsed="true">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAhAAAAAAAAAAAAAAAAAAAAAAADEAAAA=</HashCode>
+      <FileName>Model\Jewels\ColourGroup.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
