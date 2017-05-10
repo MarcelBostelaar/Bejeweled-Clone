@@ -24,7 +24,34 @@ namespace Bejeweled_clone_0_2.Graphics
         /// The size of this RelativeRenderTarget in its parent, with 0,0 representing topleft and 1,1 representing bottomright.
         /// </summary>
         public Vector2 size { get; set; }
+        /// <summary>
+        /// A list of the child textures of this texture.
+        /// </summary>
+        public List<RelativeRenderTarget> childTextures { get; set; }
 
+        /// <summary>
+        /// List of all the IAnimations, except for the ChildRenderTargets.
+        /// </summary>
+        public List<IAnimation> animations { get; set; }
+
+        /// <summary>
+        /// Draws the children of this RelativeRenderTexture onto itself. Also draws any child RelativeRenderTexture using this method.
+        /// </summary>
+        /// <param name="gameTime">Current gametime.</param>
+        /// <param name="spriteBatch">A spritebatch instance, <b>not started</b>.</param>
+        public void DrawChildren(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            foreach (var child in childTextures)
+                child.DrawChildren(gameTime, spriteBatch);
+
+            var AllAnimations = new List<IAnimation>();
+            AllAnimations.AddRange(childTextures);
+            AllAnimations.AddRange(animations);
+            animations.Sort();
+            //add children and animations into one sorted list.
+            //draw the list.
+            throw new NotImplementedException();
+        }
 
         public RelativeRenderTarget(GraphicsDevice graphicsDevice, int width, int height)
         {
