@@ -11,7 +11,7 @@ namespace Bejeweled_clone_0_2.Board.Tiles
     interface ITile
     {
         Jewels.Jewel jewel { get; set; }
-        IAnimation GetAnimation(GameTime gameTime, long duration);
+        IAnimation GetAnimation();
         void GetJewelPreviousTile(Point ownIndex); //need the index for non-directly connected tiles.
     }
 }

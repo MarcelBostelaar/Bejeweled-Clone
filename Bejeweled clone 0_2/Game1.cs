@@ -27,7 +27,7 @@ namespace Bejeweled_clone_0_2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Board.Jewels.JewelFactory.Intitialize();
             base.Initialize();
         }
 
