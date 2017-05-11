@@ -39,11 +39,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Board\IPlayBoard.cs" />
+    <Compile Include="Board\Jewels\ColourGroup.cs" />
     <Compile Include="Board\Jewels\Jewel.cs" />
+    <Compile Include="Board\Jewels\JewelFactory.cs" />
+    <Compile Include="Board\Jewels\JewelGenerators\IJewelGenerator.cs" />
+    <Compile Include="Board\Jewels\JewelGenerators\SimpleJewelGenerator.cs" />
+    <Compile Include="Board\Jewels\NoSpecialPower.cs" />
+    <Compile Include="Board\Jewels\ISpecialPower.cs" />
     <Compile Include="Board\SimpleBoard.cs" />
     <Compile Include="Board\Tiles\ITile.cs" />
+    <Compile Include="Board\Tiles\JewelGeneratingTile.cs" />
+    <Compile Include="Board\Tiles\NormalTile.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Graphics\Animation\AbstractAnimation.cs" />
     <Compile Include="Graphics\Animation\IAnimation.cs" />
+    <Compile Include="Graphics\Animation\LimitedTimeAnimation.cs" />
+    <Compile Include="Graphics\Animation\StaticImage.cs" />
     <Compile Include="Graphics\RelativeRenderTarget.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
