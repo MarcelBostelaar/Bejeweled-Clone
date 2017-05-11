@@ -39,5 +39,6 @@ namespace Bejeweled_clone_0_2.Board
         /// </summary>
         /// <returns>Enumerable of tuples of 2 points. First point is original position. Second point is new position.</returns>
         IEnumerable<Tuple<Point, Point>> DropCalculationUpdate();
+
     }
 }
