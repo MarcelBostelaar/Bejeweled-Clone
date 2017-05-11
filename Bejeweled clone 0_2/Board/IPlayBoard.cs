@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Bejeweled_clone_0_2.Board.Jewels;
+using Bejeweled_clone_0_2.Board.Tiles;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +35,39 @@ namespace Bejeweled_clone_0_2.Board
         /// <summary>
         /// The dimentions of the playboard in tiles.
         /// </summary>
-        Point size { get; }
+        Point boardSize { get; }
         /// <summary>
-        /// Does one drop calculation update and returns an enumerable of tuples indicating which gems were moved.
+        /// Does one drop calculation update and returns an enumerable of tuples indicating how the jewels moved.
         /// </summary>
-        /// <returns>Enumerable of tuples of 2 points. First point is original position. Second point is new position.</returns>
-        IEnumerable<Tuple<Point, Point>> DropCalculationUpdate();
-
+        /// <returns>Enumerable of tuples of 2 points and a jewel. First point is original position. Second point is new position. The jewel is the jewel that was moved.</returns>
+        IEnumerable<Tuple<Point, Point, Jewel>> DropCalculationUpdate();
+        /// <summary>
+        /// Attempts to swap the jewels of two tiles. Returns boolean indicating success.
+        /// </summary>
+        /// <param name="firstTile">Coordinates of first tile.</param>
+        /// <param name="secondTile">Coordinates of second tile.</param>
+        /// <returns>Boolean idicatin success.</returns>
+        bool SwapJewels(Point firstTile, Point secondTile);
+        /// <summary>
+        /// Does a clearing update and returns an enumerable of enumerables, which are the collections of clearing jewels.
+        /// </summary>
+        /// <returns>An enumerable of enumerable of tuples. Each enumerable in of tuples is a group of cleared jewels. In the tuple, the point indicates the coordinates where it was cleared, and the Jewel is the jewel that was cleared.</returns>
+        IEnumerable<IEnumerable<Tuple<Point, Jewel>>> ClearingUpdate();
+        /// <summary>
+        /// Returns an enumerable of tuples of all existing jewels. Point indicated the coordinates, Jewel is the jewel.
+        /// </summary>
+        /// <returns>Enumerable of tuples. Point is coordinate on the board. Jewel is the jewel.</returns>
+        IEnumerable<Tuple<Point, Jewel>> GetAllJewels();
+        /// <summary>
+        /// Returns an enumerable of tuples of all existing tiles. Point indicated the coordinates, ITile is the tile.
+        /// </summary>
+        /// <returns>Enumerable of tuples. Point is coordinate on the board. ITile is the tile.</returns>
+        IEnumerable<Tuple<Point, ITile>> GetAllTiles();
+        /// <summary>
+        /// Returns a specified ITile by coordinate.
+        /// </summary>
+        /// <param name="coordinates">The coordinate of the tile to retrieve.</param>
+        /// <returns>The specified ITile.</returns>
+        ITile GetTile(Point coordinates);
     }
 }
