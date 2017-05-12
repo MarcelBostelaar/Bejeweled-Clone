@@ -1,4 +1,5 @@
 ﻿using Bejeweled_clone_0_2.Graphics.Animation;
+using Bejeweled_clone_0_2.Graphics.Animation.SpriteCycles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Bejeweled_clone_0_2.Board.Jewels
         /// <summary>
         /// The IAnimation of this jewel.
         /// </summary>
-        public IAnimation animation { get; private set; }
+        public ISpriteCycle animation { get; private set; }
 
         ColourGroup colourGroup;
         ISpecialPower specialPower;
@@ -28,7 +29,7 @@ namespace Bejeweled_clone_0_2.Board.Jewels
         /// <param name="colourGroup">The colourgroup of this jewel.</param>
         /// <param name="specialPower">The special power of this jewel.</param>
         /// <param name="animation">The Ianimation that this jewel has.</param>
-        public Jewel(int points, ColourGroup colourGroup, ISpecialPower specialPower, IAnimation animation)
+        public Jewel(int points, ColourGroup colourGroup, ISpecialPower specialPower, ISpriteCycle animation)
         {
             this.animation = animation;
             this.points = points;

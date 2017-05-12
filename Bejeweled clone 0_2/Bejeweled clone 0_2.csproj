@@ -54,6 +54,8 @@
     <Compile Include="Graphics\Animation\AbstractAnimation.cs" />
     <Compile Include="Graphics\Animation\IAnimation.cs" />
     <Compile Include="Graphics\Animation\LimitedTimeAnimation.cs" />
+    <Compile Include="Graphics\Animation\SpriteCycles\ContinuousMultiTextureCycle.cs" />
+    <Compile Include="Graphics\Animation\SpriteCycles\ISpriteCycle.cs" />
     <Compile Include="Graphics\Animation\StaticImage.cs" />
     <Compile Include="Graphics\RelativeRenderTarget.cs" />
     <Compile Include="Program.cs" />

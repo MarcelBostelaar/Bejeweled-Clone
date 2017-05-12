@@ -18,7 +18,22 @@ namespace Bejeweled_clone_0_2.Board.Jewels.JewelGenerators
         {
             get
             {
-                throw new NotImplementedException();
+                switch (rng.Next(0, 6))
+                {
+                    case 0:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalBlue);
+                    case 1:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalGreen);
+                    case 2:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalOrange);
+                    case 3:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalPurple);
+                    case 4:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalRed);
+                    case 5:
+                        return JewelFactory.GetJewel(JewelFactory.Jewels.NormalYellow);
+                }
+                return null;
             }
         }
     }

@@ -6,32 +6,45 @@ using System.Threading.Tasks;
 using Bejeweled_clone_0_2.Board.Jewels;
 using Bejeweled_clone_0_2.Graphics.Animation;
 using Microsoft.Xna.Framework;
+using Bejeweled_clone_0_2.Board.Jewels.JewelGenerators;
+using Bejeweled_clone_0_2.Graphics.Animation.SpriteCycles;
 
 namespace Bejeweled_clone_0_2.Board.Tiles
 {
     class JewelGeneratingTile : ITile
     {
+        public static ISpriteCycle spriteCycle;
+
+        IJewelGenerator generator;
+        public JewelGeneratingTile(IJewelGenerator generator)
+        {
+            this.generator = generator;
+        }
+
+        Jewel _jewel;
+
         public Jewel jewel
         {
             get
             {
-                throw new NotImplementedException();
+                if (_jewel == null)
+                    _jewel = generator.Next;
+                return _jewel;
             }
-
             set
             {
-                throw new NotImplementedException();
+                _jewel = value;
             }
         }
 
-        public IAnimation GetAnimation()
+        public Tuple<Point, Point, Jewel> GetJewelPreviousTile(Point ownIndex)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
-        public void GetJewelPreviousTile(Point ownIndex)
+        public ISpriteCycle GetSpriteCycle()
         {
-            throw new NotImplementedException();
+            return spriteCycle;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Bejeweled_clone_0_2.Graphics.Animation;
+using Bejeweled_clone_0_2.Graphics.Animation.SpriteCycles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,23 +44,23 @@ namespace Bejeweled_clone_0_2.Board.Jewels
             SetSpecialPower(Jewels.NormalYellow, new NoSpecialPower());
         }
 
-        private static IAnimation[] animations = new IAnimation[Enum.GetNames(typeof(Jewels)).Length];
+        private static ISpriteCycle[] spriteCycles = new ISpriteCycle[Enum.GetNames(typeof(Jewels)).Length];
         private static ColourGroup[] colourGroups = new ColourGroup[Enum.GetNames(typeof(Jewels)).Length];
         private static ISpecialPower[] specialPowers = new ISpecialPower[Enum.GetNames(typeof(Jewels)).Length];
         private static int[] points = new int[Enum.GetNames(typeof(Jewels)).Length];
 
         public static Jewel GetJewel(Jewels type)
         {
-            return new Jewel(points[(int)type], colourGroups[(int)type], specialPowers[(int)type], animations[(int)type]);
+            return new Jewel(points[(int)type], colourGroups[(int)type], specialPowers[(int)type], spriteCycles[(int)type]);
         }
 
-        public static void SetAnimation(Jewels jewelType, IAnimation animation)
+        public static void SetAnimation(Jewels jewelType, ISpriteCycle animation)
         {
-            animations[(int)jewelType] = animation;
+            spriteCycles[(int)jewelType] = animation;
         }
-        public static IAnimation GetAnimation(Jewels jewelType)
+        public static ISpriteCycle GetAnimation(Jewels jewelType)
         {
-            return animations[(int)jewelType];
+            return spriteCycles[(int)jewelType];
         }
 
         private static void SetSpecialPower(Jewels jewelType, ISpecialPower power)
