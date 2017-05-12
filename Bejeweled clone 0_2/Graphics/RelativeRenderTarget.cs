@@ -57,6 +57,14 @@ namespace Bejeweled_clone_0_2.Graphics
         /// <param name="spriteBatch">A spritebatch instance, <b>not started</b>.</param>
         public void DrawChildren(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            List<IAnimation> newAnimations = new List<IAnimation>();
+            foreach (var animation in animations)
+            {
+                if (!animation.Done(gameTime))
+                    newAnimations.Add(animation);
+            }
+            animations = newAnimations;
+
             foreach (var child in childTextures)
                 child.DrawChildren(gameTime, spriteBatch);
 

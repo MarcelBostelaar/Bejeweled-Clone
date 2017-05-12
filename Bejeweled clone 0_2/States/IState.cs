@@ -11,7 +11,7 @@ namespace Bejeweled_clone_0_2.States
     interface IState
     {
         void Update(GameTime gameTime);
-        void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
+        //void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
         void OnPush(GameTime gameTime);
     }
 }

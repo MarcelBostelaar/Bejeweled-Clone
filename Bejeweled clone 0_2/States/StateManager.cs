@@ -47,10 +47,10 @@ namespace Bejeweled_clone_0_2.States
             state?.Update(gameTime);
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
-        {
-            var state = GetTopState();
-            state?.Draw(gameTime, spriteBatch, graphicsDevice);
-        }
+        //public void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice)
+        //{
+        //    var state = GetTopState();
+        //    state?.Draw(gameTime, spriteBatch, graphicsDevice);
+        //}
     }
 }

@@ -22,7 +22,7 @@ namespace Bejeweled_clone_0_2.States
             this.stateManager = stateManager;
         }
         public abstract void Update(GameTime gameTime);
-        public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
+        //public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch, GraphicsDevice graphicsDevice);
         public abstract void OnPush(GameTime gameTime);
     }
 }
